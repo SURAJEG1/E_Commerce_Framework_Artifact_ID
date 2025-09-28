@@ -1,7 +1,6 @@
 package testScripts;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
+import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,44 +8,57 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObject.AmazonSearchPageObject;
+import screenshotUtility.ScreenShotUtilities;
 
-public class AmazonSearch_TestCase {
-	
+public class AmazonSearch_TestCase extends BasicTestComponent{
+
 
 	@Test
+	public void amazonProductSearchAndClickAddToCart_Tc001() throws IOException {
+		amazonSearchBox();
+		ScreenShotUtilities takeScreenShot=new ScreenShotUtilities(driver);
+		takeScreenShot.screenShot();
+		//takeScreenShot();
+		driver.quit();
+	}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+
+
+	/*
 	public void tc001(){
 		WebDriver driver=new ChromeDriver();
 		AmazonSearchPageObject src=new AmazonSearchPageObject(driver);
 		src.searchMacbookPro();
 	}
-	
-	@Test
+
+
 	public void tc002() {
-		Assert.assertTrue(2<5);
+		Assert.assertTrue(2<5);   // Assert.assert for set boolean value (True/False) 
 	}
-	
-	@Test
+
+
 	public void tc003() {
-		Assert.assertTrue(5<2);
+		Assert.assertTrue(5<2);  // Assert.assert for set boolean value (True/False)  
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	 */
+
+
+
 
 }

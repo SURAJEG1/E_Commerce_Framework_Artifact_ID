@@ -19,34 +19,55 @@ public class AmazonSearchPageObject extends AbstractComponent {
 		PageFactory.initElements(driver, this);
 	}
 
+	// Elements
 	// Set WebElement by using "PageFactory" Annotation
-	@FindBy(xpath="//input[@id='twotabsearchtextbox']") WebElement searchbox;
+	@FindBy(xpath="//input[@id='twotabsearchtextbox']") 
+	WebElement searchbox;
+	
+	@FindBy(xpath="//button[@name='submit.addToCart']") 
+	WebElement addToCart;
 
+	
 
+    /*
+	//Action Method
 	public void openAmazonURL() {
-		driver.get("https://www.amazon.in");
-		max();
+		//driver.get("https://www.amazon.in");
+		//max();
 	}
 
-
+	//Action Method
 	public void  searchbox() {
 		//driver.get("https://www.amazon.in");
 		//WebElement searchbox=driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 		//searchbox.sendKeys("MacBook Pro 4");
 		//searchbox.submit();
 	}
+	*/
 
-
-	public void searchMacbookPro() {
-		driver.get("https://www.amazon.in");
+	//Action Method
+	public void searchMacbookProAndClickAddToCart() {
 		max();
+		driver.get("https://www.amazon.in");
 		//WebElement searchbox=driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-		searchbox.sendKeys("Macbook Pro 4");
+		searchbox.sendKeys("Macbook Pro");
 		searchbox.submit();
-		quit();
+		addToCart.click();
+		
 	}
 
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
